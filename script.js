@@ -50,7 +50,7 @@ popuReq.onload = function(){
     var rawPopuData = popuReq.response;
     var popuData = JSON.parse(rawPopuData);
     var totalPopu = popuData.reduce((acc,cv)=>acc+cv.population,0)
-    console.log(totalPopu)
+    console.log(`Totla popoulation in the world : ${totalPopu} `)
 };
 //e. Country which uses US Dollars as currency.
 var currencyRequest = new XMLHttpRequest;
@@ -60,7 +60,7 @@ currencyRequest.onload = function(){
 var currencyRawData = currencyRequest.response;
 var currencyData = JSON.parse(currencyRawData);
 var currencies = currencyData.map((ele)=>{
-console.log(ele.currencies.USD)
+console.log(ele.name.common,ele.currencies)
 })
 }
 
